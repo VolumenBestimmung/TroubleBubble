@@ -114,8 +114,8 @@ def tracke(folder, anzahlInsgesamt):
 
     print(f"Fertig! Gesamtvolumen: {gesamtvolumen:.2f} µl")
 
-
-if __name__ == '__main__':
-    ordn = glob.glob(f"JetsonTest/0-1ml_1mls_18G_kol_Test/2021-*")[-1]
+# Dieser Abschnitt wird ausgeführt, wenn das Skript direkt aufgerufen wird, statt durch "starteMessung.py"
+if __name__ == '__main__': 
+    ordn = glob.glob(f"202*")[-1] # Ordner mit neustem Zeitstempel
     names = sorted(glob.glob(f'{ordn}/*.bmp'))
-    anz = tracke(ordn, len(names))
+    tracke(ordn, len(names))
