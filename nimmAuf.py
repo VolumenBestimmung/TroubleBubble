@@ -52,7 +52,7 @@ def setCameraParameters(cam, frate):
     cam.AcquisitionFrameRate.SetValue(frate)
 
     cam.ExposureTime.SetValue(300.0)
-
+    # Bei Änderung der Region of Interest: hier die neuen Werte eintragen
     cam.Width.SetValue(1900)
     cam.Height.SetValue(100)
     cam.OffsetY.SetValue(670)
