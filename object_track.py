@@ -48,8 +48,6 @@ def tracke(folder, anzahlInsgesamt):
     while anzahlVerarbeiteterBilder < anzahlInsgesamt:
 
         fnames = sorted(glob.glob(f'{folder}/*.bmp'))
-        if len(fnames) == 0:
-            fnames = sorted(glob.glob(f'{folder}/*.tiff'))
 
         if len(fnames) > anzahlVerarbeiteterBilder:
             try:
@@ -120,7 +118,4 @@ def tracke(folder, anzahlInsgesamt):
 if __name__ == '__main__':
     ordn = glob.glob(f"JetsonTest/0-1ml_1mls_18G_kol_Test/2021-*")[-1]
     names = sorted(glob.glob(f'{ordn}/*.bmp'))
-    if len(names) == 0:
-        names = sorted(glob.glob(f'{ordn}/*.tiff'))
-
     anz = tracke(ordn, len(names))
